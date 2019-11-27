@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</head>
+<style>
+    fieldset{
+        width: fit-content;
+        margin: auto;
+        margin-top: 50px ;
+        height: fit-content;
+    }
+    p{
+        margin-bottom: 30px;
+    }
+    body {
+        background-image: url("/image/Savin-NY-Website-Background-Web.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+</style>
+<body>
+<fieldset style="width: fit-content; height: fit-content;">
+    <legend style="text-shadow: 2px 2px 6px crimson"><h2 style="color: crimson">Confirm Delete Product Entry</h2></legend>
+    <p>Are You Sure You wanna Delete:&nbsp;<a th:text="${product.name}"></a></p>
+    <p><a th:href="@{/__${product.getId()}__/doDeleteProduct}"><button type="button" onclick="return confirm('Are You Sure?')">Delete</button></a></p>
+    <p><a th:href="@{/}"><button type="button">Back</button></a></p>
+</fieldset>
+</body>
+</html>
